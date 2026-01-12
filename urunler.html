@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler - Fenerium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><img src="https://media.fenerium.com/Fenerium/media/images/fenerium-logo.png?ext=.png"
+                        alt="Fenerium" class="img-fluid"></h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="urunler.html">Ürünler</a>
+                <a href="cark.html">Çark Çevir</a>
+                <a href="sepet.html" class="cart-link">🛒 Sepet (<span id="cart-count-header">0</span>)</a>
+                <a href="#" onclick="showSection('contact', event)">İletişim</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="products">
+        <div class="container">
+            <h2>Tüm Ürünler</h2>
+
+            <!-- Filtreler -->
+            <div class="filters">
+                <button onclick="filterProducts('all')" class="filter-btn active">Tümü</button>
+                <button onclick="filterProducts('forma')" class="filter-btn">Formalar</button>
+                <button onclick="filterProducts('aksesuar')" class="filter-btn">Aksesuarlar</button>
+                <button onclick="filterProducts('ayakkabi')" class="filter-btn">Ayakkabılar</button>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                <div class="product-card" data-category="forma" id="ic-saha-24">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/AT013EFS014SR.jpg"
+                        alt="Fenerbahçe 2025/26 Çubuklu Forma" class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>İç Saha Forması 2024</h3>
+                    <p class="price">599,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('ic-saha-24')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="forma" id="deplasman-24">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/AT013EFS03400.jpg"
+                        alt="Fenerbahçe 2025/26 Lacivert Forma" class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Deplasman Forması</h3>
+                    <p class="price">599,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('deplasman-24')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="atki">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TA145UFY02407.jpg"
+                        alt="Fenerbahçe Lacivert Canım Feda Olsun Sana Unisex Şal"
+                        class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Taraftar Atkısı</h3>
+                    <p class="price">149,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('atki')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="sapka">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TA019CEY08407-03.jpg"
+                        alt="Fenerbahçe  Sonsuza Kadar Fenerbahçe Şapka"
+                        class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>FB Şapka</h3>
+                    <p class="price">199,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('sapka')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="ayakkabi" id="spor-ayakkabi">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/AY039CFY13001.jpg"
+                        alt="Fenerbahçe Astog Beyaz Spor Ayakkabı 31-35"
+                        class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>FB Spor Ayakkabı</h3>
+                    <p class="price">899,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('spor-ayakkabi')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="ayakkabi" id="kero-ayakkabi">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/AY039GFY02400.jpg"
+                        alt="Fenerbahçe Astog Beyaz Spor Ayakkabı 31-35"
+                        class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe Kero Spor Ayakkabı 36-40</h3>
+                    <p class="price">899,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('kero-ayakkabi')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="ayakkabi" id="cena-ayakkabi">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/AY039CEY02001.jpg"
+                        alt="Fenerbahçe Astog Beyaz Spor Ayakkabı 31-35"
+                        class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe Cena Pu Spor Ayakkabı</h3>
+                    <p class="price">899,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('cena-ayakkabi')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="q-saat-1">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA036UFS05000.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe Quantum 25/D2 Kol Saati</h3>
+                    <p class="price">399,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('q-saat-1')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="ayakkabi" id="terlik">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/AY058GBY025LA.jpg"
+                        alt="Fenerbahçe Astog Beyaz Spor Ayakkabı 31-35"
+                        class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe Dakota Sarı Lacivert Terlik</h3>
+                    <p class="price">199,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('terlik')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="q-saat-2">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA036UFS12400.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe Lacivert Quantum Kol Saati SLL-6/25</h3>
+                    <p class="price">399,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('q-saat-2')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="q-saat-3">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA036UFS10609.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe Koyu Yeşil Quantum Kol Saati SY-4/25</h3>
+                    <p class="price">399,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('q-saat-3')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="q-saat-4">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA036UFS13605.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe Kahverengi Quantum Kol Saati DK-1</h3>
+                    <p class="price">399,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('q-saat-4')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="anahtarlik">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA023TES09000.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe Çubuklu Anahtarlık</h3>
+                    <p class="price">199,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('anahtarlik')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="bere">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TA045UGK07301.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe Gri Melanj Unisex Bere</h3>
+                    <p class="price">199,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('bere')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="hediye-kutusu">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA108UFS01000.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe BizeEmanet Hediye Kutusu</h3>
+                    <p class="price">200,07 TL</p>
+                    <button class="btn" onclick="sepeteEkle('hediye-kutusu')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="kravat">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TA031UES014SR.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe Lacivert Sarı Kravat</h3>
+                    <p class="price">99,07 TL</p>
+                    <button class="btn" onclick="sepeteEkle('kravat')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="bayrak-1">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA422TES015LC.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>Fenerbahçe 19x25 Logo Püsküllü Üçgen Bayrak</h3>
+                    <p class="price">60,07 TL</p>
+                    <button class="btn" onclick="sepeteEkle('bayrak-1')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="aksesuar" id="bayrak-2">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/HA400UCS015LC.jpg"
+                        alt="Fenerbahçe File Spor Çantası" class="img-fluid swiper-lazy mx-auto swiper-lazy-loaded">
+                    <h3>30X45 5 Yıldız FB Logo Sallama Bayrak</h3>
+                    <p class="price">70,07 TL</p>
+                    <button class="btn" onclick="sepeteEkle('bayrak-2')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="forma" id="beyaz-forma">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TK414EFS08001.jpg"
+                        alt="Fenerbahçe 2025/26 Lacivert Forma" class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe Beko 2025/26 Adidas Erkek Beyaz Forma</h3>
+                    <p class="price">599,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('beyaz-forma')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="forma" id="retro-forma">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TK414EES095LC.jpg"
+                        alt="Fenerbahçe 2025/26 Lacivert Forma" class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe Retro Çubuklu Forma 02/03</h3>
+                    <p class="price">599,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('retro-forma')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="forma" id="sari-forma">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/AT013EFS02500.jpg"
+                        alt="Fenerbahçe 2025/26 Lacivert Forma" class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe 2025/26 Chobani Sarı Forma</h3>
+                    <p class="price">599,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('sari-forma')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="forma" id="basket-lacivert">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TK414EES12400.jpg"
+                        alt="Fenerbahçe 2025/26 Lacivert Forma" class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe 24/25 Adidas Basketbol Erkek Lacivert Forma</h3>
+                    <p class="price">599,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('basket-lacivert')">Sepete Ekle</button>
+                </div>
+                <div class="product-card" data-category="forma" id="basket-cubuklu">
+                    <img src="https://media.fenerium.com/Fenerium/media/images/urunler/TK414EES104SR.jpg"
+                        alt="Fenerbahçe 2025/26 Lacivert Forma" class="img-fluid swiper-lazy swiper-lazy-loaded">
+                    <h3>Fenerbahçe 24/25 Adidas Basketbol Erkek Çubuklu Forma </h3>
+                    <p class="price">599,90 TL</p>
+                    <button class="btn" onclick="sepeteEkle('basket-cubuklu')">Sepete Ekle</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Fenerium TG - Tüm Hakları Saklıdır</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- İletişim Modal (Gizli) -->
+    <div id="contact-modal" class="contact-modal" style="display: none;">
+        <div class="contact-modal-content">
+            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <h2>📞 İletişim</h2>
+            <div class="contact-grid">
+                <!-- Sol: Form -->
+                <div class="contact-form-wrapper">
+                    <form onsubmit="gonderIletisimFormu(event)">
+                        <div class="form-group">
+                            <label>Ad Soyad *</label>
+                            <input type="text" id="iletisimAd" required placeholder="Adınız ve soyadınız">
+                        </div>
+                        <div class="form-group">
+                            <label>E-posta *</label>
+                            <input type="email" id="iletisimEmail" required placeholder="ornek@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon</label>
+                            <input type="tel" id="iletisimTelefon" placeholder="0532 xxx xx xx">
+                        </div>
+                        <div class="form-group">
+                            <label>Konu *</label>
+                            <select id="iletisimKonu" required>
+                                <option value="">Konu Seçin</option>
+                                <option value="urun">Ürün Bilgisi</option>
+                                <option value="siparis">Sipariş Takibi</option>
+                                <option value="iade">İade ve Değişim</option>
+                                <option value="oneri">Öneri ve Şikayet</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Mesajınız *</label>
+                            <textarea id="iletisimMesaj" required rows="4"
+                                placeholder="Mesajınızı buraya yazın..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">📨 Gönder</button>
+                    </form>
+                </div>
+
+                <!-- Sağ: Bilgiler -->
+                <div class="contact-info-wrapper">
+                    <h3>📍 İletişim Bilgileri</h3>
+                    <p><strong>📧 E-posta:</strong> gurlertolga97@gmail.com</p>
+                    <p><strong>📱 Telefon:</strong> 190 719 0719</p>
+                    <p><strong>📍 Adres:</strong> Şükrü Saracoğlu Stadyumu, Kadıköy, İstanbul</p>
+                    <hr>
+                    <div class="social-links">
+                        <a href="#">📘 Facebook</a>
+                        <a href="#">📷 Instagram</a>
+                        <a href="#">🐦 Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
